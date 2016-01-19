@@ -4,3 +4,5 @@ import {
 } from 'ember-qunit';
 
 setResolver(resolver);
+
+import './helpers/wait-to-appear';
