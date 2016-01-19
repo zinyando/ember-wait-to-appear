@@ -20,4 +20,11 @@ function waitToAppear(app, selector, interval = 200) {
     checkVisibility(selector, interval, resolve, true);
   });
 }
+
+function waitToDisappear(app, selector, interval = 200) {
+  return new Ember.RSVP.Promise(function(resolve) {
+    checkVisibility(selector, interval, resolve, false);
+  });
+}
 Ember.Test.registerAsyncHelper('waitToAppear', waitToAppear);
+Ember.Test.registerAsyncHelper('waitToDisappear', waitToDisappear);
